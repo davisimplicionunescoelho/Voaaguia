@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: voaaguia
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/voaaguia_sprint2}
+      auto-index-creation: true
+  datasource:
+    url: jdbc:h2:mem:voaaguia_audit;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: never
+app:
+  jwt-secret: ${JWT_SECRET}
+  jwt-minutes: 60
+  seed-enabled: ${SEED_ENABLED:false}
+  seed-password: ${SEED_PASSWORD:}
+  seed-sample-data: ${SEED_SAMPLE_DATA:false}
+  gemini-key: ${GEMINI_API_KEY:}
+  gemini-model: ${GEMINI_MODEL:gemini-3.6-flash}

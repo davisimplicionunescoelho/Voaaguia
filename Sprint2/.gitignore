@@ -1,0 +1,8 @@
+.env
+local.properties
+**/build/
+**/.gradle/
+**/target/
+*.log
+.idea/
+*.jks
